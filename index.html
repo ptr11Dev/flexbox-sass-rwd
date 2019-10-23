@@ -5,14 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>First Flexbox - Sass project</title>
+    <script
+      src="https://kit.fontawesome.com/24e72d356a.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="header__logo">Logo</div>
-        <form class="header__search" action="">Search</form>
-        <div class="header__settings">Settings</div>
+        <div class="header__logo">
+          <img
+            class="header__logo-image"
+            src="img/logo.png"
+            alt="Website's logo"
+          />
+        </div>
+        <form class="header__search" action="">
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Input article's name"
+          />
+          <button class="header__search-btn">Search</button>
+        </form>
+        <div class="header__settings">
+          <a class="header__settings-icon-link" href=""
+            ><i class="fas fa-sliders-h"></i
+          ></a>
+          <a class="header__settings-icon-link" href=""
+            ><i class="fas fa-sliders-h"></i
+          ></a>
+          <a class="header__settings-icon-link" href=""
+            ><i class="fas fa-sliders-h"></i
+          ></a>
+        </div>
         <nav class="header__menu">Menu</nav>
       </header>
       <section class="main-articles">Main Articles</section>
