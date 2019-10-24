@@ -7,7 +7,7 @@ arial,
 sans-serif;
 
 $main-color: black;
-$sub-color: #2C320E;
+$sub-color: rgb(56, 19, 9);
 
 $font-main-color: white;
 
@@ -30,7 +30,7 @@ $font-main-color: white;
     font-size: 2rem;
     color: $font-main-color;
     max-width: 1000px;
-    background-color: $sub-color;
+    background-color: lighten($main-color, 13%);
     margin: 0 auto;
     box-shadow: 0 0 7px 0 $font-main-color;
 }
@@ -85,6 +85,7 @@ $font-main-color: white;
             &:hover {
                 background-color: black;
                 color: white;
+                border-color: yellow;
             }
         }
     }
@@ -101,22 +102,116 @@ $font-main-color: white;
             transition: .2s;
 
             &:hover {
-                color: black
+                color: yellow;
             }
         }
 
     }
 
-    &__menu {
-        flex-basis: 100%;
-        background-color: blue;
+}
+
+.menu {
+    flex-basis: 100%;
+    background-color: $sub-color;
+    font-family: $special-font;
+    height: 70px;
+    padding: 15px 0 15px 80px;
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+    }
+
+    &__link {
+        color: $font-main-color;
+        text-decoration: none;
+        display: block;
+    }
+
+    &__item {
+        text-transform: uppercase;
+        font-size: 2rem;
+        line-height: 40px;
+        margin: 0 20px;
+
+        &:hover {
+            border-bottom: 2px solid yellow;
+        }
+
+
+    }
+
+    &__item:last-of-type {
+        margin-left: auto;
+        margin-right: 80px;
+
+        border: 2px solid white;
+        transition: .3s;
+
+        &:hover {
+            border-color: red;
+        }
+
+        .menu__link {
+            padding: 0 22px;
+        }
     }
 }
 
 .main-articles {
     flex-basis: 100%;
-    min-height: 400px;
-    background-color: darkblue;
+    background-color: lighten($sub-color, 10%);
+    display: flex;
+    flex-wrap: wrap;
+
+    &__intro {
+        flex-basis: 100%;
+        padding: 10px 0;
+        background-color: lighten($main-color, 25%);
+        text-align: center;
+        letter-spacing: 4px;
+    }
+
+    .article {
+        flex-basis: 50%;
+    }
+}
+
+.article {
+    padding: 30px 50px;
+    text-align: center;
+
+    &__image {
+        display: block;
+        width: 100%;
+    }
+
+    &__title {
+        font-family: $special-font;
+        text-transform: uppercase;
+        font-size: 3rem;
+        padding: 35px 0 15px;
+    }
+
+    &__intro {
+        line-height: 1.6;
+        font-size: 1.8rem;
+    }
+
+    &__btn {
+        font-size: 1.5rem;
+        padding: 2px 5px;
+        border: 2px solid $main-color;
+        transition: .3s;
+        background-color: $sub-color;
+
+        &:hover {
+            border-color: white;
+            background-color: lighten($sub-color, 10%);
+            color: white;
+            cursor: pointer;
+        }
+    }
 }
 
 .old-articles {
