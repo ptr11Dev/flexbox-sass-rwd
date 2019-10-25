@@ -44,6 +44,7 @@ $font-main-color: white;
     &__logo {
         flex-basis: 200px;
 
+
         &-image {
             width: 100%;
             display: block;
@@ -56,10 +57,16 @@ $font-main-color: white;
         align-items: center;
         justify-content: center;
 
+        @media(max-width:799px) {
+            flex-basis: 100%;
+            order: -1;
+        }
+
         &-input {
             flex-basis: 60%;
             height: 50%;
             max-height: 60px;
+            min-height: 50px;
             padding: 0 10px;
             font-size: 1.4rem;
             margin-right: 2vh;
@@ -74,6 +81,7 @@ $font-main-color: white;
             font-size: 1.4rem;
             height: 50%;
             max-height: 60px;
+            min-height: 50px;
             padding: 0 10px;
             border: 2px solid $main-color;
             background-color: white;
@@ -81,6 +89,8 @@ $font-main-color: white;
             letter-spacing: 2px;
             cursor: pointer;
             transition: .3s;
+
+
 
             &:hover {
                 background-color: black;
@@ -94,6 +104,11 @@ $font-main-color: white;
         display: flex;
         padding: 0 30px 0 50px;
         align-items: center;
+
+        @media(max-width:799px) {
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
 
         &-icon-link {
             margin: 0 10px;
@@ -174,6 +189,10 @@ $font-main-color: white;
 
     .article {
         flex-basis: 50%;
+
+        @media (max-width:799px) {
+            flex-basis: 100%
+        }
     }
 }
 
@@ -204,6 +223,8 @@ $font-main-color: white;
         border: 2px solid $main-color;
         transition: .3s;
         background-color: $sub-color;
+        text-decoration: none;
+        color: white;
 
         &:hover {
             border-color: white;
@@ -212,14 +233,59 @@ $font-main-color: white;
             cursor: pointer;
         }
     }
+
+    &--small {
+        padding: 20px 30px;
+    }
 }
 
-.old-articles {
+.common-articles {
     flex-basis: 100%;
+    padding: 20px 0;
     background-color: goldenrod;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .article {
+        flex-basis: 30%;
+
+        @media(max-width:1023px) {
+            flex-basis: 45%
+        }
+
+        @media(max-width:799px) {
+            flex-basis: 90%
+        }
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        background-color: $main-color;
+    }
 }
 
 footer {
     flex-basis: 100%;
     background-color: lighten($main-color, 15%);
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+.social-links {
+    flex-basis: 30%;
+    text-align: center;
+    font-family: $special-font;
+
+    &__title {
+        padding: 15px 0 7px;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    &__item {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
 }
